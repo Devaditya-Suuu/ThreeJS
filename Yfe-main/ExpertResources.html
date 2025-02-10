@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finYouth - Financial Literacy for Young Minds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        .overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md relative z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-teal-600">finYouth</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-teal-600">Home</a>
+                    <a href="#study" class="text-gray-700 hover:text-teal-600">Study Material</a>
+                    <a href="#tools" class="text-gray-700 hover:text-teal-600">Tools & Calculators</a>
+                    <a href="#challenges" class="text-gray-700 hover:text-teal-600">Challenges</a>
+                    <a href="#experts" class="text-gray-700 hover:text-teal-600">Expert Resources</a>
+                    <button class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">Sign Up</button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMenu()" class="text-gray-700">
+                        <i class="bi bi-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-lg md:hidden">
+            <div class="flex justify-end p-4">
+                <button onclick="toggleMenu()" class="text-gray-700">
+                    <i class="bi bi-x-lg text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4 p-4">
+                <a href="#home" onclick="toggleMenu()" class="text-gray-700 hover:text-teal-600">Home</a>
+                <a href="#study" onclick="toggleMenu()" class="text-gray-700 hover:text-teal-600">Study Material</a>
+                <a href="#challenges" onclick="toggleMenu()" class="text-gray-700 hover:text-teal-600">Challenges</a>
+                <a href="#experts" onclick="toggleMenu()" class="text-gray-700 hover:text-teal-600">Expert Resources</a>
+                <button class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 w-full">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="home" class="bg-gradient-to-r from-teal-500 to-teal-700 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Master Your Finances Early</h1>
+                <p class="text-xl mb-8">Smart financial decisions today shape your tomorrow</p>
+                <button class="bg-white text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expert Resources Section -->
+    <div id="experts" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Expert Resources</h2>
+            <p class="text-gray-600 mt-2">Learn from industry professionals and financial experts</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Expert Resource Cards -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmluYW5jZXx8fHx8fDE3MDAwNjk5ODM&ixlib=rb-4.0.3&q=80&w=400" alt="Investment Basics" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Investment Basics</h3>
+                    <p class="text-gray-600 mb-4">Learn the fundamentals of investing from top financial advisors.</p>
+                    <a href="#" class="text-teal-600 hover:text-teal-700 font-medium">Read More →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8c3RvY2tzfHx8fHx8MTcwMDA2OTk4NA&ixlib=rb-4.0.3&q=80&w=400" alt="Stock Market Guide" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Stock Market Guide</h3>
+                    <p class="text-gray-600 mb-4">Understanding stock markets and trading strategies.</p>
+                    <a href="#" class="text-teal-600 hover:text-teal-700 font-medium">Read More →</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8YnVkZ2V0fHx8fHx8MTcwMDA2OTk4NQ&ixlib=rb-4.0.3&q=80&w=400" alt="Budgeting 101" class="w-full h-48 object-cover rounded-t-xl">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Budgeting 101</h3>
+                    <p class="text-gray-600 mb-4">Master the art of personal budgeting and saving.</p>
+                    <a href="#" class="text-teal-600 hover:text-teal-700 font-medium">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('overlay');
+            mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        }
+    </script>
+</body>
+</html>
